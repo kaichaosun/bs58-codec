@@ -67,7 +67,9 @@ impl Component for Model {
 					{ "Decode" }
 				</button>
 				<br />
-				<p>{ self.decoded_peer_id.clone() }</p>
+				<p class="w-1/2 block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4 m-8 border border-gray-500">
+					{ self.decoded_peer_id.clone() }
+				</p>
 
 				// <input type="text"
                 // 	placeholder="input your decoded peer id"
