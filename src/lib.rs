@@ -52,13 +52,13 @@ impl Component for Model {
     fn view(&self) -> Html {
         html! {
 			<div>
-				<h1>{ "Base58 converter for PeerId" }</h1>
+				<h1 class="text-lg m-8">{ "Base58 converter for PeerId" }</h1>
 				<br />
 
 				<input type="text"
                 	placeholder="input your peer id"
 					oninput=self.link.callback(|e: InputData| Msg::SetPeerId(e.value))
-					class="w-1/2 block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4 m-8 border border-gray-500"
+					class="w-1/2 block text-gray-500 font-bold md:text-left mb-1 md:mb-0 pr-4 m-8 border border-gray-500"
 				/>
 				<button
 					onclick=self.link.callback(|_| Msg::Bs58Decode)
@@ -67,7 +67,7 @@ impl Component for Model {
 					{ "Decode" }
 				</button>
 				<br />
-				<p class="w-1/2 block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4 m-8 border border-gray-500">
+				<p class="w-4/6 block text-gray-500 font-bold md:text-left mb-1 md:mb-0 pr-4 m-8 border border-gray-500">
 					{ self.decoded_peer_id.clone() }
 				</p>
 
